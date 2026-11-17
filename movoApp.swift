@@ -2,18 +2,17 @@ import SwiftUI
 
 @main
 struct movoApp: App {
+    @State private var showWorkoutSheet: Bool = false
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .sheet(isPresented: $showWorkoutSheet) {
-                WorkoutCameraSheet() // Your CoreML camera workout view[cite: 8, 9]
-                }
+            MainTabView(isWorkoutPresented: $showWorkoutSheet)
                 .onOpenURL { url in
-                // Triggered when jumping from the shield action
-                if url.scheme == "movo" {
-                    showWorkoutSheet = true
+                    // Triggered when jumping from the shield action
+                    if url.scheme == "movo" {
+                        showWorkoutSheet = true
+                    }
                 }
-            }
         }
     }
 }

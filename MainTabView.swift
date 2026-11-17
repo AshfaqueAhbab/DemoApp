@@ -1,11 +1,12 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @Binding var isWorkoutPresented: Bool
+
     @State private var selectedTab: Int = 0
     @State private var availableMinutes: Int = 45
     @State private var earnedToday: Int = 40
     @State private var usedToday: Int = 25
-    @State private var isWorkoutPresented: Bool = false
     @State private var activeWorkoutTarget: (title: String, reps: Int, rewardMinutes: Int) = ("Squats", 20, 10)
 
     var body: some View {
