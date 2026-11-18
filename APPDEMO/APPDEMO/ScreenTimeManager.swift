@@ -2,6 +2,8 @@
 import SwiftUI
 import FamilyControls
 
+import Combine
+
 @MainActor
 final class ScreenTimeManager: ObservableObject {
 
