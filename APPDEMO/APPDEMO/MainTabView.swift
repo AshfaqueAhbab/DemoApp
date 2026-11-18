@@ -14,7 +14,8 @@ struct MainTabView: View {
                 availableMinutes: state.availableMinutes,
                 usedMinutes: state.usedToday,
                 earnedMinutes: state.earnedToday,
-                onStartChallenge: { startWorkout(.squats) }
+                onStartChallenge: { startWorkout(.squats) },
+                onManageApps: { showManageApps = true }
             )
             .tabItem { Label("Today", systemImage: "house") }
             .tag(0)
