@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct TodayView: View {
-    @Binding var availableMinutes: Int
+    @EnvironmentObject private var state: AppState
+    let availableMinutes: Int
     let usedMinutes: Int
     let earnedMinutes: Int
     let onStartChallenge: () -> Void
@@ -58,7 +59,7 @@ struct TodayView: View {
                             }
                         }
 
-                        Text("30 min daily allowance + \(earnedMinutes) min earned")
+                        Text("\(state.dailyAllowance) min daily allowance + \(earnedMinutes) min earned")
                             .font(.system(size: 12))
                             .foregroundStyle(.secondary)
 
